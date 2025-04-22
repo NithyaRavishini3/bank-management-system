@@ -185,12 +185,12 @@ public class SignupTwo extends JFrame implements ActionListener{
         String snic = nic.getText();
 
         try{
+                Conn c = new Conn();
+                String query = "insert into signuptwo values('"+formno+"', '"+sreligion+"','"+scategory+"', '"+sincome+"', '"+seducation+"','"+soccupation+"','"+stin+"', '"+snic+"', '"+seniorcitizen+"', '"+existingaccount+"')";
+                c.s.executeUpdate(query);
 
-            Conn c = new Conn();
-            String query = "insert into signuptwo values('"+formno+"', '"+sreligion+"','"+scategory+"', '"+sincome+"', '"+seducation+"','"+soccupation+"','"+stin+"', '"+snic+"', '"+seniorcitizen+"', '"+existingaccount+"')";
-            c.s.executeUpdate(query);
+                //Signup 3 object
 
-            //Signup 3 object
         }catch (Exception e){
             System.out.println(e);
         }
@@ -200,4 +200,9 @@ public class SignupTwo extends JFrame implements ActionListener{
     public static void main(String args[]) {
         new SignupTwo("");
     }
+
 }
+
+
+
+
